@@ -152,11 +152,3 @@ Without API keys, the application runs in **mock mode** with:
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Disclaimer
-
-This application is for educational and informational purposes only. The stock data, predictions, and analysis should not be used as the sole basis for investment decisions. Real-time data may have delays. Always consult with a qualified financial advisor before making investment decisions.
-
-## Support
-
-For support, please open an issue on GitHub or contact the development team.
