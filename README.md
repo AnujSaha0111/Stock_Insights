@@ -1,10 +1,6 @@
 # Stock Insights
 
-A modern React/TypeScript application for visualizing and analyzing stock market data. This project provides real-time updates, advanced analytics, sentiment analysis, and portfolio tracking, all in a user-friendly interface.
-
-## About
-
-This project was created to help users track and analyze stock market trends, manage a portfolio, and explore technical indicators. It is designed for both casual investors and those interested in financial data visualization.
+A modern React/TypeScript application for visualizing and analyzing stock market data. This project provides real-time updates, advanced analytics, sentiment analysis, and portfolio tracking, all in a user-friendly interface, created to help users track and analyze stock market trends, manage a portfolio, and explore technical indicators. It is designed for both casual investors and those interested in financial data visualization.
 
 ## Features
 
@@ -13,15 +9,11 @@ This project was created to help users track and analyze stock market trends, ma
 - **Multiple API Support**: Alpha Vantage, Finnhub, Polygon.io with automatic fallback
 - **Interactive Charts**: Multiple chart types (line, area, candlestick) with zoom and pan capabilities
 - **Company Search**: Search and select from 50+ popular companies with autocomplete
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- **Dark/Light Theme**: Toggle between themes with system preference detection
 
 ### 🔴 Real-Time Features
 - **Live Price Streaming**: WebSocket connections for instant price updates
 - **Automatic Refresh**: Configurable polling intervals (default: 30 seconds)
 - **Connection Status**: Visual indicators for live/offline status
-- **Rate Limiting**: Smart API usage with caching and fallback mechanisms
-- **Multi-Provider Support**: Seamless switching between data providers
 
 ### 📊 Advanced Analytics
 - **Technical Indicators**: RSI, MACD, Bollinger Bands with toggleable overlays
@@ -29,22 +21,11 @@ This project was created to help users track and analyze stock market trends, ma
 - **Statistical Forecasts**: Price forecasts based on historical data and statistical models
 - **Historical Data**: Customizable time ranges (1D to 2Y)
 
-### 💼 Portfolio Management
-- **Portfolio Tracking**: Add/remove stocks, track performance
-- **Performance Metrics**: Total value, gain/loss, percentage returns
-- **Local Storage**: Persistent portfolio data across sessions
-
 ### 🔧 Export & Sharing
 - **Data Export**: CSV export for historical data
 - **Chart Export**: PNG image export of charts
 - **Report Generation**: Text-based analysis reports
 - **Social Sharing**: Share insights on social media platforms
-
-### ♿ Accessibility
-- **Keyboard Navigation**: Full keyboard support
-- **Screen Reader Support**: ARIA labels and semantic HTML
-- **High Contrast**: Accessible color schemes
-- **Focus Management**: Clear focus indicators
 
 ## Technology Stack
 
@@ -75,7 +56,7 @@ cd stock-insights
 npm install
 ```
 
-3. **Configure APIs (Optional for Real-time Data)**:
+3. Configure APIs (Optional for Real-time Data):
 
 Create a `.env` file in the project root with the following content:
 
@@ -118,20 +99,6 @@ The application supports multiple real-time data providers:
 - **Features**: High-quality financial data
 - **Setup**: Get API key at [polygon.io](https://polygon.io/)
 
-### Environment Variables
-
-```bash
-# API Configuration
-VITE_API_PROVIDER=finnhub          # Primary data provider
-VITE_FINNHUB_API_KEY=your_key      # Finnhub API key
-VITE_ALPHA_VANTAGE_API_KEY=your_key # Alpha Vantage API key
-VITE_POLYGON_API_KEY=your_key       # Polygon API key
-
-# Real-time Settings
-VITE_ENABLE_WEBSOCKET=true          # Enable WebSocket streaming
-VITE_UPDATE_INTERVAL=30000          # Polling interval (ms)
-```
-
 ### Mock Data Mode
 
 Without API keys, the application runs in **mock mode** with:
@@ -146,67 +113,17 @@ Without API keys, the application runs in **mock mode** with:
 1. **Select a Company**: Use the search dropdown to find and select a company
 2. **View Metrics**: See real-time price, change, volume, and market cap
 3. **Analyze Charts**: Switch between chart types and time ranges
-4. **Add Indicators**: Toggle technical indicators on/off
 
 ### Real-Time Features
 1. **Monitor Connection**: Check the live/offline indicator in the sidebar
 2. **View Last Update**: See when data was last refreshed
 3. **Manual Refresh**: Click the refresh button for instant updates
-4. **API Status**: Click the settings icon to view API configuration
 
 ### Advanced Features
 1. **Sentiment Analysis**: Switch to the Sentiment tab to view market sentiment
 2. **Price Predictions**: View 5-day price predictions in the Prediction tab
 3. **Portfolio Tracking**: Add stocks to your portfolio in the Portfolio tab
 4. **Export Data**: Use the export tools to download data or share insights
-
-### Keyboard Shortcuts
-- `Tab`: Navigate between interactive elements
-- `Enter`: Select highlighted option in dropdowns
-- `Escape`: Close open dropdowns or modals
-- `Space`: Toggle checkboxes and buttons
-
-## API Integration
-
-### Current Implementation
-
-The application includes a comprehensive real-time API service with:
-
-- **Multi-provider support** with automatic fallback
-- **WebSocket streaming** for real-time price updates
-- **Intelligent caching** to minimize API usage
-- **Rate limiting** to respect API quotas
-- **Error handling** with graceful degradation
-
-### Adding New Providers
-
-To add a new API provider:
-
-1. **Extend the RealTimeStockApi class** in `src/services/realTimeApi.ts`
-2. **Add provider-specific methods** for data fetching
-3. **Update environment configuration**
-4. **Test with rate limiting and error handling**
-
-## Customization
-
-### Adding New Companies
-Edit `src/data/companies.ts` to add more companies to the search dropdown.
-
-### Modifying Technical Indicators
-Extend `src/services/technicalIndicators.ts` to add new technical analysis calculations.
-
-### Styling
-The application uses Tailwind CSS. Modify `tailwind.config.js` for theme customization.
-
-## Performance Optimization
-
-- **Smart Caching**: Automatic caching with configurable TTL
-- **Rate Limiting**: Intelligent API usage management
-- **WebSocket Pooling**: Efficient real-time connection management
-- **Lazy Loading**: Components load only when needed
-- **Memoization**: React.memo and useMemo for expensive calculations
-- **Debounced Search**: Search input is debounced to reduce API calls
-- **Connection Management**: Automatic reconnection and cleanup
 
 ## Real-Time Architecture
 
@@ -216,12 +133,6 @@ The application uses Tailwind CSS. Modify `tailwind.config.js` for theme customi
 3. **Cache Layer**: Reduces API calls and improves performance
 4. **State Management**: React hooks for real-time state updates
 5. **Error Handling**: Graceful fallback to mock data
-
-### Connection Management
-- **Automatic Reconnection**: WebSocket reconnects on disconnect
-- **Subscription Management**: Efficient subscriber pattern
-- **Resource Cleanup**: Proper cleanup on component unmount
-- **Rate Limiting**: Respects API quotas and limits
 
 ## Browser Support
 
