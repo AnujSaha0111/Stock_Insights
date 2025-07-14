@@ -76,15 +76,18 @@ npm install
 ```
 
 3. **Configure APIs (Optional for Real-time Data)**:
-```bash
-# Copy the environment template
-cp .env.example .env
 
-# Edit .env and add your API keys:
-VITE_ALPHA_VANTAGE_API_KEY=your_key_here
-VITE_FINNHUB_API_KEY=your_key_here
-VITE_API_PROVIDER=finnhub  # or alphavantage, polygon, mock
+Create a `.env` file in the project root with the following content:
+
+```env
+VITE_FINNHUB_API_KEY=your_finnhub_key_here
+VITE_ALPHA_VANTAGE_API_KEY=your_alpha_vantage_key_here
+VITE_POLYGON_API_KEY=your_polygon_key_here
+
+VITE_API_PROVIDER=your_api_provider(finnhub/alpha_vantage/polygon)
+
 VITE_ENABLE_WEBSOCKET=true
+VITE_UPDATE_INTERVAL=30000
 ```
 
 4. Start the development server:
@@ -93,42 +96,6 @@ npm run dev
 ```
 
 5. Open your browser and navigate to `http://localhost:5173`
-
-## Deployment
-
-You can deploy this app to GitHub Pages or any static hosting provider. For GitHub Pages:
-
-1. Install the GitHub Pages package (if not already):
-   ```bash
-   npm install --save-dev gh-pages
-   ```
-2. Add the following to your `package.json`:
-   ```json
-   "homepage": "https://<your-username>.github.io/stock-insights"
-   ```
-3. Add deploy scripts to `package.json`:
-   ```json
-   "scripts": {
-     // ... existing scripts ...
-     "predeploy": "npm run build",
-     "deploy": "gh-pages -d dist"
-   }
-   ```
-4. If deploying to a subpath (like GitHub Pages), set the correct base path in `vite.config.ts`:
-   ```js
-   // vite.config.ts
-   export default defineConfig({
-     base: '/stock-insights/',
-     // ...other config
-   });
-   ```
-5. Build and deploy:
-   ```bash
-   npm run deploy
-   ```
-6. Your app will be available at `https://<your-username>.github.io/stock-insights`
-
-For other static hosts (like Netlify, Vercel), simply run `npm run build` and upload the `dist/` folder.
 
 ## Real-Time Configuration
 
